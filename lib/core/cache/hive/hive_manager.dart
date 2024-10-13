@@ -31,8 +31,4 @@ class HiveManager {
 
     return box.values.toList();
   }
-
-  deleteData<T>(String boxKey) {
-    var box = Hive.box<T>(boxKey);
-  }
 }
