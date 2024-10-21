@@ -1,3 +1,4 @@
+import 'package:ecomerce_ieee/core/services/validation_service.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -49,21 +50,16 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
       ),
       validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter your ${widget.isEmail ? "email" : "password"}';
-        }
         if (widget.isEmail) {
-          String pattern =
-              r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
-          RegExp regExp = RegExp(pattern);
-          if (!regExp.hasMatch(value)) {
-            return 'Please enter a valid email';
-          }
+          return ValidationService.validateEmail(value);
         }
-        if (widget.isPassword && value.length < 6) {
-          return 'Password must be at least 6 characters long';
+        if (widget.isPassword) {
+       return ValidationService.validatePassword(value);
         }
-        return null;
+        {
+          return ValidationService.validateEmpty(value, widget.label);
+        }
+
       },
     );
   }
