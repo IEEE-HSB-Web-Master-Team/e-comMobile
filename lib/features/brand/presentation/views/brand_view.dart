@@ -23,14 +23,6 @@ class BrandView extends StatelessWidget {
               const SliverToBoxAdapter(
                 child: CustomBrandList(),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 26,
-                ),
-              ),
-              const SliverToBoxAdapter(
-                child: CustomBrandList(),
-              ),
             ],
           ),
         ));
