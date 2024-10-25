@@ -1,5 +1,3 @@
-import 'package:ecomerce_ieee/features/brand/presentation/views/brand_view.dart';
-import 'package:ecomerce_ieee/features/example_on_clean_dontwritethingonit/presentation/pages/home_screen.dart';
 import 'package:ecomerce_ieee/features/login/presentation/widgets/login_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -8,9 +6,7 @@ class AppRoute {
   // static const String home = "/";
   // static const String login = "/";
   static const String brandView = "/";
-
   static final router = GoRouter(
-
     routes: [
       // GoRoute(
       //   path: login,
@@ -18,11 +14,9 @@ class AppRoute {
       // ),
       GoRoute(
         path: brandView,
-        builder: (context, state) => const BrandView(),
+        builder: (context, state) =>
+            const BrandView(),
       ),
     ],
   );
-
-
-
 }
