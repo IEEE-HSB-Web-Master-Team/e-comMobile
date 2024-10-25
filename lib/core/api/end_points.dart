@@ -1,5 +1,5 @@
 class EndPoints{
 
-  static const baseUrl="/";
+  static const baseUrl="https://ecommerce.routemisr.com";
 
 }
