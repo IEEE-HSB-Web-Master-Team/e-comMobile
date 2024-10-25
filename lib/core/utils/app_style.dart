@@ -44,5 +44,13 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-
+  static TextStyle style14 = TextStyle(
+      color: AppColor.brandTextColor,
+      fontSize: 14,
+      fontWeight: FontWeight.bold);
+  static TextStyle style12 = TextStyle(
+    color: AppColor.brandTextColor,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
 }
