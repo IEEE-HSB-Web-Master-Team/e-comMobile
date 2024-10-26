@@ -1,6 +1,5 @@
 import 'package:ecomerce_ieee/core/utils/app_string.dart';
 import 'package:ecomerce_ieee/core/utils/app_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -72,9 +71,9 @@ class LoginViewBody extends StatelessWidget {
                 ),
               ),
             ),
-
-
-            SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Center(child: Text("Don't have an account? Create Acount",style: AppStyle.style18,))
           ],
         ),
