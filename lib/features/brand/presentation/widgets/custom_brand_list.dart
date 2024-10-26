@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'custom_brand_image.dart';
 
 class CustomBrandList extends StatelessWidget {
@@ -7,23 +6,25 @@ class CustomBrandList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(7, (index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Column(
-              children: [
-                CustomBrandImage(),
-                SizedBox(
-                  height: 16,
-                ),
-                CustomBrandImage(),
-              ],
-            ),
+    return SizedBox(
+      height: 400,
+      child: GridView.builder(
+        padding: EdgeInsets.zero,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8.0,
+          crossAxisSpacing: 8.0,
+          childAspectRatio: .75,
+        ),
+        itemCount: 6,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              CustomBrandImage(),
+            ],
           );
-        }),
+        },
       ),
     );
   }
