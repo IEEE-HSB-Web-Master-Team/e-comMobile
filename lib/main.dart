@@ -11,9 +11,11 @@ import 'config/routes/routes.dart';
 import 'core/di/config.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
   configureEasyLoading();
   Bloc.observer = MyBlocObserver();
+
   await ScreenUtil.ensureScreenSize();
   runApp(DevicePreview(
     builder: (BuildContext context) => MyApp(),
