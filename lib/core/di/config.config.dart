@@ -13,7 +13,6 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 import '../api/dio_factory.dart' as _i1008;
-import '../api/retrofit_client.dart' as _i836;
 import '../cache/hive/hive_manager.dart' as _i329;
 import '../cache/storage_token.dart' as _i170;
 
@@ -32,8 +31,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i329.HiveManager>(() => _i329.HiveManager());
     gh.singleton<_i170.StorageToken>(() => _i170.StorageToken());
     gh.singleton<_i361.Dio>(() => dioFactory.getDio(gh<_i170.StorageToken>()));
-    gh.factory<_i836.RetrofitClient>(
-        () => _i836.RetrofitClient(gh<_i361.Dio>()));
     return this;
   }
 }
